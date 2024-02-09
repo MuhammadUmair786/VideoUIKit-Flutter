@@ -14,7 +14,7 @@ Future<void> getToken({
   required SessionController sessionController,
 }) async {
   final response = await http
-      .get(Uri.parse('$tokenUrl/rtc/$channelName/publisher/uid/$uid'));
+      .get(Uri.parse('$tokenUrl'));
   if (response.statusCode == HttpStatus.ok) {
     sessionController.value = sessionController.value
         .copyWith(generatedToken: jsonDecode(response.body)['rtcToken']);
