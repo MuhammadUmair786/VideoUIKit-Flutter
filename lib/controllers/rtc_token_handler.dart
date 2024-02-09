@@ -17,7 +17,7 @@ Future<void> getToken({
       .get(Uri.parse('$tokenUrl'));
   if (response.statusCode == HttpStatus.ok) {
     sessionController.value = sessionController.value
-        .copyWith(generatedToken: jsonDecode(response.body)['token']);
+        .copyWith(generatedToken: jsonDecode(response.body)['rtcToken']);
   } else {
     log("${response.reasonPhrase}",
         level: Level.error.value, name: "AgoraVideoUIKit");
